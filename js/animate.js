@@ -83,8 +83,5 @@
 		parallax();		
 		scrolledWindow();
 		
-		// Animations
-		homeAnimate();
-
 	});
 }());

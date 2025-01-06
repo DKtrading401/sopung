@@ -596,6 +596,8 @@ if (typeof jQuery === 'undefined') {
       .removeClass('collapse')
       .addClass('collapsing')[dimension](0)
       .attr('aria-expanded', true)
+      // mobile navbar background
+      $('.navbar-default').addClass('on');
 
     this.$trigger
       .removeClass('collapsed')
@@ -636,7 +638,12 @@ if (typeof jQuery === 'undefined') {
       .addClass('collapsing')
       .removeClass('collapse in')
       .attr('aria-expanded', false)
-
+      // mobile navbar background
+      var navHeight = $(window).height() - 500;
+        if ($(window).scrollTop() < navHeight) {
+          $('.navbar-default').removeClass('on');
+        }
+      
     this.$trigger
       .addClass('collapsed')
       .attr('aria-expanded', false)
