@@ -8,9 +8,9 @@
 <meta name="author" content="">
 
 <!-- Favicons -->
-<link rel="icon" href="img/favicon/favicon_72.png" type="image/x-icon">
-<link rel="icon" sizes="72x72" href="img/favicon/favicon_72.png" type="image/x-icon">
-<link rel="icon" sizes="114x114" href="img/favicon/favicon_150.png" type="image/x-icon">
+<link rel="icon" href="img/favicon/favicon.png" type="image/x-icon">
+<link rel="icon" sizes="72x72" href="img/favicon/favicon.png" type="image/x-icon">
+<link rel="icon" sizes="114x114" href="img/favicon/favicon.png" type="image/x-icon">
 
 <!-- Bootstrap -->
 <link rel="stylesheet" type="text/css"  href="css/bootstrap.css">
@@ -46,7 +46,7 @@
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
       <button type="button" id="navbar_button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
-      <a class="navbar-brand page-scroll" href="#page-top"><img src="img/sopung_logo.png" alt="sopung_logo" style="height : 0.8em;"></a></div>
+      <a class="navbar-brand page-scroll" href="#page-top"><img src="img/sopung_logo.png" alt="sopung_logo"></a></div>
     
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -58,7 +58,7 @@
         <li><a href="#" class="page-scroll" id="lan_events">이벤트</a></li>
         <li><a href="#" class="page-scroll" id="lan_recruit">인재채용</a></li>
         <li><a href="#" class="page-scroll">DK Networks</a></li>
-        <li>
+        <li class="languageSelector">
           <!-- 언어 설정 메뉴 생성 -->
           <label for="languageSelector" style="position: absolute; top: 10px; left: 90px;">Language:</label>
           <select id="languageSelector" style="position: absolute; top: 10px; left: 170px;">
@@ -81,47 +81,46 @@
   updateLanguage("ko");
 
   document.getElementById("languageSelector").addEventListener("change", function() {
-      const selectedLang = this.value;
-      updateLanguage(selectedLang);
-  });
+    const selectedLang = this.value;
+    updateLanguage(selectedLang);
+    });
   });
   
   /* 딕셔너리 내 모든 key 값을 순회하며 변경하는 함수 */
   function updateLanguage(lang) {
-      for (let key in langResource[lang]) {
-      const element = document.getElementById(key);
-      if (element) {
-          element.textContent = langResource[lang][key];
+    for (let key in langResource[lang]) {
+    const element = document.getElementById(key);
+    if (element) {
+        element.textContent = langResource[lang][key];
       }
-      }
+    }
   }
 </script>
 
-<!-- Header -->
-<header id="header">
-  <div class="intro">
-    <div id="intro" class="js-fullheight">
+<!-- Intro -->
+<div class="intro">
+  <div id="intro" class="js-fullheight">
 
-        <div class="flexslider">
-            
-          <div class="intro-overlay" style="opacity: 0.5;"></div>
-            <div class="intro-text">
-                <div class="container">
-                    <div class="row">
-                        <h1>SOPUNG</h1>
-                        <h2 class="to-animate">Korean Wellbeing Foods</h2>
-                    </div>
-                </div>
-            </div>
-              <ul class="slides">
-               <li style="background-image: url(img/slide_1.jpg);" data-stellar-background-ratio="0.5"></li>
-               <li style="background-image: url(img/slide_2.jpg);" data-stellar-background-ratio="0.5"></li>
-               <li style="background-image: url(img/slide_3.jpg);" data-stellar-background-ratio="0.5"></li>
-              </ul>
-        </div>
-    </div>
+      <div class="flexslider">
+          
+        <div class="intro-overlay" style="opacity: 0.5;"></div>
+          <div class="intro-text">
+              <div class="container">
+                  <div class="row">
+                      <h1>SOPUNG</h1>
+                      <h2 class="to-animate">Korean Wellbeing Foods</h2>
+                  </div>
+              </div>
+          </div>
+            <ul class="slides">
+              <li style="background-image: url(img/slide_1.jpg);" data-stellar-background-ratio="0.5"></li>
+              <li style="background-image: url(img/slide_2.jpg);" data-stellar-background-ratio="0.5"></li>
+              <li style="background-image: url(img/slide_3.jpg);" data-stellar-background-ratio="0.5"></li>
+            </ul>
+      </div>
   </div>
-</header>
+</div>
+
 <!-- About Section -->
 <div id="about">
   <div class="container">
